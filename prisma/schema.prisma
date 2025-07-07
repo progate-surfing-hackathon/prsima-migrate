@@ -28,6 +28,7 @@ model activity {
   weather   Json?
   health    Json?
   item_name String
+  item_price Int
 
   users users @relation(fields: [author], references: [id], name: "UserActivities")
 
