@@ -14,23 +14,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  id   String @id
-  name String
-  activity activity[] @relation("UserActivities")
-}
 
 model activity {
   id        String   @id @default(uuid())
   author    String
   timestamp DateTime
-  location  Json?
   weather   Json?
   health    Json?
+  steps     Int
+
+  @@index([author])
+}
+
+
+model buy {
+  id      String    @id  @default(ulid())
+  author  String
+  timestamp DateTime
   item_name String
   item_price Int
-
-  users users @relation(fields: [author], references: [id], name: "UserActivities")
-
+  
   @@index([author])
 }
