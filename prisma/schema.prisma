@@ -24,3 +24,7 @@ model activity {
   created_at    DateTime
   @@index([author])
 }
+model users {
+  id        String  @id
+  border    Int @default(300)
+}
