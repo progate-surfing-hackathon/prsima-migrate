@@ -16,23 +16,11 @@ datasource db {
 
 
 model activity {
-  id        String   @id @default(uuid())
-  author    String
-  timestamp DateTime
-  weather   Json?
-  health    Json?
-  steps     Int
-
-  @@index([author])
-}
-
-
-model buy {
-  id      String    @id  @default(ulid())
-  author  String
-  timestamp DateTime
-  item_name String
-  item_price Int
-  
+  id            String   @id @default(uuid())
+  author        String
+  temp          Int
+  steps         Int
+  paid_monney   Int
+  created_at    DateTime
   @@index([author])
 }
