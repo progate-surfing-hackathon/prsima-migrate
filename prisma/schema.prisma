@@ -16,15 +16,16 @@ datasource db {
 
 
 model activity {
-  id            String   @id @default(uuid())
-  author        String
-  temp          Int
-  steps         Int
-  paid_monney   Int
-  created_at    DateTime
-  @@index([author])
+  id          String   @id @default(uuid())
+  author      String
+  temp        Int
+  steps       Int
+  paid_monney Int
+  created_at  DateTime
+  @@index([author, created_at]) // 複合インデックスに変更
 }
+
 model users {
-  id        String  @id
-  border    Int @default(300)
+  id      String @id
+  border  Int    @default(300)
 }
