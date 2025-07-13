@@ -28,4 +28,5 @@ model activity {
 model users {
   id      String @id
   border  Int    @default(300)
+  notification_token    String
 }
