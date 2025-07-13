@@ -26,7 +26,15 @@ model activity {
 }
 
 model users {
-  id      String @id
+  id String @id @default(uuid())
+  author String 
   border  Int    @default(300)
   notification_token    String
+}
+
+model over_borders {
+  id String @id @default(uuid())
+  author String
+  notification_token String
+  predicted_monney Int
 }
