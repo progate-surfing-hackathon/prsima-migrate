@@ -30,3 +30,7 @@ model users {
   border  Int    @default(300)
   notification_token    String
 }
+
+model over_borders {
+  notification_token String
+}
